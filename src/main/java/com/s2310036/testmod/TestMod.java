@@ -1,6 +1,7 @@
 package com.s2310036.testmod;
 
 import com.mojang.logging.LogUtils;
+import com.s2310036.testmod.block.TestBlocks;
 import com.s2310036.testmod.item.TestItems;
 import com.s2310036.testmod.item.TestTabs;
 import net.minecraft.world.item.CreativeModeTab;
@@ -32,7 +33,9 @@ public class TestMod
         // アイテムレジストリをイベントバスに登録
         TestItems.register(modEventBus);
         // クリエイティブタブレジストリをイベントバスに登録
-        TestTabs.register((modEventBus));
+        TestTabs.register(modEventBus);
+        // ブロックレジストリをイベントバスに登録
+        TestBlocks.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
