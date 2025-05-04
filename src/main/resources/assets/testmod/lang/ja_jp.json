@@ -2,5 +2,6 @@
   "item.testmod.guardian_scales": "ガーディアンのウロコ",
   "item.testmod.guardian_fin": "ガーディアンのヒレ",
   "creativetabs.test_tab": "テスト",
-  "block.testmod.guardmarine": "ガードマリン"
+  "block.testmod.guardmarine": "ガードマリン",
+  "block.testmod.guardian_fossil": "ガーディアンの化石"
 }

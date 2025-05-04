@@ -22,6 +22,9 @@ public class TestBlocks {
     public static final RegistryObject<Block> GUARDMARINE = registerBlockItem("guardmarine",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> GUARDIAN_FOSSIL = registerBlockItem("guardian_fossil",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).sound(SoundType.AMETHYST)));
+
     private static <T extends Block> RegistryObject<T> registerBlockItem(String name,
                                                                           Supplier<T> supplier) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);

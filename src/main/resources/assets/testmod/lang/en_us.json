@@ -2,5 +2,6 @@
   "item.testmod.guardian_scales": "Guardian Scales",
   "item.testmod.guardian_fin": "Guardian Fin",
   "creativetabs.test_tab": "Test",
-  "block.testmod.guardmarine": "Guardmarine"
+  "block.testmod.guardmarine": "Guardmarine",
+  "block.testmod.guardian_fossil": "Guardian Fossil"
 }

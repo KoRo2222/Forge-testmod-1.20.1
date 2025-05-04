@@ -25,6 +25,7 @@ public class TestTabs {
                         pOutput.accept(TestItems.GUARDIAN_SCALES.get());
                         pOutput.accept(TestItems.GUARDIAN_FIN.get());
                         pOutput.accept(TestBlocks.GUARDMARINE.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_FOSSIL.get());
                     }))
                     .build());
 
