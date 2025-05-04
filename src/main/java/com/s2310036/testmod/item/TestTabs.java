@@ -1,6 +1,7 @@
 package com.s2310036.testmod.item;
 
 import com.s2310036.testmod.TestMod;
+import com.s2310036.testmod.block.TestBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,8 +22,9 @@ public class TestTabs {
                     .title(Component.translatable("creativetabs.test_tab"))
                     .icon(TestItems.GUARDIAN_FIN.get()::getDefaultInstance)
                     .displayItems(((pParameters, pOutput) -> {
-                        pOutput.accept(TestItems.GUARDIAN_FIN.get());
                         pOutput.accept(TestItems.GUARDIAN_SCALES.get());
+                        pOutput.accept(TestItems.GUARDIAN_FIN.get());
+                        pOutput.accept(TestBlocks.GUARDMARINE.get());
                     }))
                     .build());
 
