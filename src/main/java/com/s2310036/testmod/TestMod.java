@@ -1,6 +1,7 @@
 package com.s2310036.testmod;
 
 import com.mojang.logging.LogUtils;
+import com.s2310036.testmod.item.TestItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,6 +25,9 @@ public class TestMod
         IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
+
+        // アイテムレジストリをイベントバスに登録
+        TestItems.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
