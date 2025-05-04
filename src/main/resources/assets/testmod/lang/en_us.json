@@ -1,4 +1,5 @@
 {
   "item.testmod.guardian_scales": "Guardian Scales",
-  "item.testmod.guardian_fin": "Guardian Fin"
+  "item.testmod.guardian_fin": "Guardian Fin",
+  "creativetabs.test_tab": "Test"
 }

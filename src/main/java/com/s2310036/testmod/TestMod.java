@@ -2,6 +2,7 @@ package com.s2310036.testmod;
 
 import com.mojang.logging.LogUtils;
 import com.s2310036.testmod.item.TestItems;
+import com.s2310036.testmod.item.TestTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +31,8 @@ public class TestMod
 
         // アイテムレジストリをイベントバスに登録
         TestItems.register(modEventBus);
+        // クリエイティブタブレジストリをイベントバスに登録
+        TestTabs.register((modEventBus));
 
         MinecraftForge.EVENT_BUS.register(this);
 

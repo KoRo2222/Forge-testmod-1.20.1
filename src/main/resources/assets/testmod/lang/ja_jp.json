@@ -1,4 +1,5 @@
 {
   "item.testmod.guardian_scales": "ガーディアンのウロコ",
-  "item.testmod.guardian_fin": "ガーディアンのヒレ"
+  "item.testmod.guardian_fin": "ガーディアンのヒレ",
+  "creativetabs.test_tab": "テスト"
 }
