@@ -16,6 +16,8 @@ public class TestItems {
     //レジストリにアイテムを追加
     public static final RegistryObject<Item> GUARDIAN_SCALES = ITEMS.register("guardian_scales", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> GUARDIAN_FIN = ITEMS.register("guardian_fin", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventbus) {
         // レジストリをイベントバスに登録
         ITEMS.register(eventbus);

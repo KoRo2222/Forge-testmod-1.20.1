@@ -44,6 +44,7 @@ public class TestMod
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(TestItems.GUARDIAN_SCALES);
+            event.accept(TestItems.GUARDIAN_FIN);
         }
     }
 
