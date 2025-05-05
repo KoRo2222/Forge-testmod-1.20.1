@@ -2,10 +2,12 @@ package com.s2310036.testmod.block;
 
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.item.TestItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,8 +27,15 @@ public class TestBlocks {
     public static final RegistryObject<Block> GUARDIAN_FOSSIL = registerBlockItem("guardian_fossil",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> PRISMARINE_ORE = registerBlockItem("prismarine_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE),
+                    UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> DEEPSLATE_PRISMARINE_ORE = registerBlockItem(
+            "deepslate_prismarine_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+
     private static <T extends Block> RegistryObject<T> registerBlockItem(String name,
-                                                                          Supplier<T> supplier) {
+                                                                         Supplier<T> supplier) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         TestItems.ITEMS.register(name,
                 () -> new BlockItem(block.get(), new Item.Properties()));

@@ -22,5 +22,7 @@ public class ENUSLanguageProvider extends LanguageProvider {
 
         addBlock(TestBlocks.GUARDMARINE, "Guardmarine");
         addBlock(TestBlocks.GUARDIAN_FOSSIL, "Guardian Fossil");
+        addBlock(TestBlocks.PRISMARINE_ORE, "Prismarine Ore");
+        addBlock(TestBlocks.DEEPSLATE_PRISMARINE_ORE, "Deepslate Prismarine Ore");
     }
 }

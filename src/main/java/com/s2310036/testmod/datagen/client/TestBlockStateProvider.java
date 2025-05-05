@@ -17,6 +17,8 @@ public class TestBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         simpleBlockWithItem(TestBlocks.GUARDMARINE);
         simpleBlockWithItem(TestBlocks.GUARDIAN_FOSSIL);
+        simpleBlockWithItem(TestBlocks.PRISMARINE_ORE);
+        simpleBlockWithItem(TestBlocks.DEEPSLATE_PRISMARINE_ORE);
     }
 
     private void simpleBlockWithItem(RegistryObject<Block> block) {

@@ -26,6 +26,8 @@ public class TestTabs {
                         pOutput.accept(TestItems.GUARDIAN_FIN.get());
                         pOutput.accept(TestBlocks.GUARDMARINE.get());
                         pOutput.accept(TestBlocks.GUARDIAN_FOSSIL.get());
+                        pOutput.accept(TestBlocks.PRISMARINE_ORE.get());
+                        pOutput.accept(TestBlocks.DEEPSLATE_PRISMARINE_ORE.get());
                     }))
                     .build());
 

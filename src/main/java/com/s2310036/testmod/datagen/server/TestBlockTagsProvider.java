@@ -21,10 +21,16 @@ public class TestBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(TestBlocks.GUARDMARINE.get(),
-                        TestBlocks.GUARDIAN_FOSSIL.get());
+                        TestBlocks.GUARDIAN_FOSSIL.get(),
+                        TestBlocks.PRISMARINE_ORE.get(),
+                        TestBlocks.DEEPSLATE_PRISMARINE_ORE.get()
+                );
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(TestBlocks.GUARDIAN_FOSSIL.get());
+                .add(TestBlocks.GUARDIAN_FOSSIL.get(),
+                        TestBlocks.PRISMARINE_ORE.get(),
+                        TestBlocks.DEEPSLATE_PRISMARINE_ORE.get()
+                );
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(TestBlocks.GUARDMARINE.get());
