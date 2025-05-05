@@ -3,6 +3,7 @@ package com.s2310036.testmod.datagen.server;
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.item.TestItems;
 import com.s2310036.testmod.loot.AddItemModifier;
+import com.s2310036.testmod.loot.ReplaceItemModifier;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
@@ -28,8 +29,12 @@ public class TestGlobalLootModifierProvider extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.5f).build()
         }, TestItems.GUARDIAN_FIN.get()));
         // スニッファーの掘り出し物
-        add("gardian_fossil_from_sniffer_digging", new AddItemModifier(new LootItemCondition[]{
+        add("gardian_fossil_from_sniffer_digging", new ReplaceItemModifier(new LootItemCondition[]{
                 new LootTableIdCondition.Builder(fromNamespaceAndPath("minecraft","gameplay/sniffer_digging")).build()
-        }, TestItems.GUARDIAN_FIN.get()));
+        }, TestItems.GUARDIAN_FIN.get(), 0.5f));
+        // 怪しげな砂
+        add("gardian_fossil_from_sus_sand", new ReplaceItemModifier(new LootItemCondition[]{
+                new LootTableIdCondition.Builder(fromNamespaceAndPath("minecraft","archaeology/desert_pyramid")).build()
+        }, TestItems.GUARDIAN_FIN.get(), 0.5f));
     }
 }
