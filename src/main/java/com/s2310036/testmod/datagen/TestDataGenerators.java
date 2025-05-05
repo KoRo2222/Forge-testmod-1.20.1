@@ -5,14 +5,18 @@ import com.s2310036.testmod.datagen.client.ENUSLanguageProvider;
 import com.s2310036.testmod.datagen.client.JAJPLanguageProvider;
 import com.s2310036.testmod.datagen.client.TestBlockStateProvider;
 import com.s2310036.testmod.datagen.client.TestItemModelProvider;
+import com.s2310036.testmod.datagen.server.TestBlockTagsProvider;
 import com.s2310036.testmod.datagen.server.TestRecipeProvider;
 import com.s2310036.testmod.datagen.server.loot.TestLootTables;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TestDataGenerators {
@@ -21,6 +25,7 @@ public class TestDataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookUpProvider = event.getLookupProvider();
 
         // アイテム用のモデルファイルの生成
         generator.addProvider(event.includeClient(), new TestItemModelProvider(packOutput
@@ -37,5 +42,8 @@ public class TestDataGenerators {
         generator.addProvider(event.includeServer(), new TestRecipeProvider(packOutput));
         // ルートテーブル
         generator.addProvider(event.includeServer(), TestLootTables.create(packOutput));
+        // ブロックタグ
+        generator.addProvider(event.includeServer(), new TestBlockTagsProvider(packOutput,
+                lookUpProvider, existingFileHelper));
     }
 }
