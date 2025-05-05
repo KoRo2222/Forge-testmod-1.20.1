@@ -1,4 +1,4 @@
-package com.s2310036.testmod.datagen;
+package com.s2310036.testmod.datagen.client;
 
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.item.TestItems;

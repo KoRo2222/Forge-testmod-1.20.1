@@ -1,6 +1,12 @@
 package com.s2310036.testmod.datagen;
 
 import com.s2310036.testmod.TestMod;
+import com.s2310036.testmod.datagen.client.ENUSLanguageProvider;
+import com.s2310036.testmod.datagen.client.JAJPLanguageProvider;
+import com.s2310036.testmod.datagen.client.TestBlockStateProvider;
+import com.s2310036.testmod.datagen.client.TestItemModelProvider;
+import com.s2310036.testmod.datagen.server.TestRecipeProvider;
+import com.s2310036.testmod.datagen.server.loot.TestLootTables;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -16,11 +22,20 @@ public class TestDataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        // アイテム用のモデルファイルの生成
         generator.addProvider(event.includeClient(), new TestItemModelProvider(packOutput
                 , existingFileHelper));
+        // ブロック用のモデルファイルの生成
         generator.addProvider(event.includeClient(), new TestBlockStateProvider(packOutput
                 , existingFileHelper));
+        // 言語ファイル（英語）
         generator.addProvider(event.includeClient(), new ENUSLanguageProvider(packOutput));
+        // 言語ファイル（日本語）
         generator.addProvider(event.includeClient(), new JAJPLanguageProvider(packOutput));
+
+        // レシピ
+        generator.addProvider(event.includeServer(), new TestRecipeProvider(packOutput));
+        // ルートテーブル
+        generator.addProvider(event.includeServer(), TestLootTables.create(packOutput));
     }
 }
