@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "#$#",
+    "$#$",
+    "#$#"
+  ],
+  "key": {
+    "#": {
+      "item": "testmod:guardian_fin"
+    },
+    "$": {
+      "item": "testmod:guardian_scales"
+    }
+  },
+  "result": {
+    "item": "testmod:guardmarine"
+  }
+}
