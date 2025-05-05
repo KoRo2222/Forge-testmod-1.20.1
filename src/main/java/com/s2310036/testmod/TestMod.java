@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.s2310036.testmod.block.TestBlocks;
 import com.s2310036.testmod.item.TestItems;
 import com.s2310036.testmod.item.TestTabs;
+import com.s2310036.testmod.loot.TestLootModifiers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,6 +37,8 @@ public class TestMod
         TestTabs.register(modEventBus);
         // ブロックレジストリをイベントバスに登録
         TestBlocks.register(modEventBus);
+        // GlobalLootModifierレジストリをイベントバスに登録
+        TestLootModifiers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

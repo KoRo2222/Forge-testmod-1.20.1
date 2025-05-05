@@ -6,6 +6,7 @@ import com.s2310036.testmod.datagen.client.JAJPLanguageProvider;
 import com.s2310036.testmod.datagen.client.TestBlockStateProvider;
 import com.s2310036.testmod.datagen.client.TestItemModelProvider;
 import com.s2310036.testmod.datagen.server.TestBlockTagsProvider;
+import com.s2310036.testmod.datagen.server.TestGlobalLootModifierProvider;
 import com.s2310036.testmod.datagen.server.TestRecipeProvider;
 import com.s2310036.testmod.datagen.server.loot.TestLootTables;
 import net.minecraft.core.HolderLookup;
@@ -45,5 +46,8 @@ public class TestDataGenerators {
         // ブロックタグ
         generator.addProvider(event.includeServer(), new TestBlockTagsProvider(packOutput,
                 lookUpProvider, existingFileHelper));
+        // GlobalLootModifier
+        generator.addProvider(event.includeServer(),
+                new TestGlobalLootModifierProvider(packOutput));
     }
 }
