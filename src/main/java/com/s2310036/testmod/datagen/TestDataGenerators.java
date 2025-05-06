@@ -8,6 +8,7 @@ import com.s2310036.testmod.datagen.client.TestItemModelProvider;
 import com.s2310036.testmod.datagen.server.TestBlockTagsProvider;
 import com.s2310036.testmod.datagen.server.TestGlobalLootModifierProvider;
 import com.s2310036.testmod.datagen.server.TestRecipeProvider;
+import com.s2310036.testmod.datagen.server.TestWorldGenProvider;
 import com.s2310036.testmod.datagen.server.loot.TestLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -49,5 +50,8 @@ public class TestDataGenerators {
         // GlobalLootModifier
         generator.addProvider(event.includeServer(),
                 new TestGlobalLootModifierProvider(packOutput));
+        // WorldGen
+        generator.addProvider(event.includeServer(),
+                new TestWorldGenProvider(packOutput, lookUpProvider));
     }
 }
