@@ -5,10 +5,7 @@ import com.s2310036.testmod.datagen.client.ENUSLanguageProvider;
 import com.s2310036.testmod.datagen.client.JAJPLanguageProvider;
 import com.s2310036.testmod.datagen.client.TestBlockStateProvider;
 import com.s2310036.testmod.datagen.client.TestItemModelProvider;
-import com.s2310036.testmod.datagen.server.TestBlockTagsProvider;
-import com.s2310036.testmod.datagen.server.TestGlobalLootModifierProvider;
-import com.s2310036.testmod.datagen.server.TestRecipeProvider;
-import com.s2310036.testmod.datagen.server.TestWorldGenProvider;
+import com.s2310036.testmod.datagen.server.*;
 import com.s2310036.testmod.datagen.server.loot.TestLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -45,8 +42,11 @@ public class TestDataGenerators {
         // ルートテーブル
         generator.addProvider(event.includeServer(), TestLootTables.create(packOutput));
         // ブロックタグ
-        generator.addProvider(event.includeServer(), new TestBlockTagsProvider(packOutput,
+        var blockTagsProvider = generator.addProvider(event.includeServer(), new TestBlockTagsProvider(packOutput,
                 lookUpProvider, existingFileHelper));
+        // アイテムタグ
+        generator.addProvider(event.includeServer(), new TestItemTagsProvider(
+                packOutput, lookUpProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         // GlobalLootModifier
         generator.addProvider(event.includeServer(),
                 new TestGlobalLootModifierProvider(packOutput));
