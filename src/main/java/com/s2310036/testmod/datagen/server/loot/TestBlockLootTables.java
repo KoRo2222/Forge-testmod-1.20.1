@@ -33,6 +33,14 @@ public class TestBlockLootTables extends BlockLootSubProvider {
                 block -> this.createOreDrop(block, Items.PRISMARINE_SHARD));
         this.add(TestBlocks.DEEPSLATE_PRISMARINE_ORE.get(),
                 block -> this.createOreDrop(block, Items.PRISMARINE_SHARD));
+
+        this.dropSelf(TestBlocks.GUARDIAN_LOG.get());
+        this.dropSelf(TestBlocks.STRIPPED_GUARDIAN_LOG.get());
+        this.dropSelf(TestBlocks.GUARDIAN_WOOD.get());
+        this.dropSelf(TestBlocks.STRIPPED_GUARDIAN_WOOD.get());
+        // TODO:ドロップを苗木に変更
+        this.add(TestBlocks.GUARDIAN_LEAVES.get(), block ->
+                createLeavesDrops(block, TestBlocks.GUARDMARINE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

@@ -1,6 +1,9 @@
 package com.s2310036.testmod.block;
 
 import com.s2310036.testmod.TestMod;
+import com.s2310036.testmod.block.custom.TestLeavesBlock;
+import com.s2310036.testmod.block.custom.TestLogBlock;
+import com.s2310036.testmod.block.custom.TestStrippableLogBlock;
 import com.s2310036.testmod.item.TestItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -33,6 +36,23 @@ public class TestBlocks {
     public static final RegistryObject<Block> DEEPSLATE_PRISMARINE_ORE = registerBlockItem(
             "deepslate_prismarine_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+
+    public static final RegistryObject<Block> STRIPPED_GUARDIAN_LOG = registerBlockItem("stripped_guardian_log",
+            () -> new TestLogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.NETHER_BRICKS)));
+
+    public static final RegistryObject<Block> STRIPPED_GUARDIAN_WOOD = registerBlockItem("stripped_guardian_wood",
+            () -> new TestLogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.NETHER_BRICKS)));
+
+    public static final RegistryObject<Block> GUARDIAN_LOG = registerBlockItem("guardian_log",
+            () -> new TestStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.NETHER_BRICKS),
+                    STRIPPED_GUARDIAN_LOG));
+
+    public static final RegistryObject<Block> GUARDIAN_WOOD = registerBlockItem("guardian_wood",
+            () -> new TestStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.NETHER_BRICKS),
+                    STRIPPED_GUARDIAN_WOOD));
+
+    public static final RegistryObject<Block> GUARDIAN_LEAVES = registerBlockItem("guardian_leaves",
+            () -> new TestLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     private static <T extends Block> RegistryObject<T> registerBlockItem(String name,
                                                                          Supplier<T> supplier) {

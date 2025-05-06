@@ -28,6 +28,11 @@ public class TestTabs {
                         pOutput.accept(TestBlocks.GUARDIAN_FOSSIL.get());
                         pOutput.accept(TestBlocks.PRISMARINE_ORE.get());
                         pOutput.accept(TestBlocks.DEEPSLATE_PRISMARINE_ORE.get());
+                        pOutput.accept(TestBlocks.STRIPPED_GUARDIAN_LOG.get());
+                        pOutput.accept(TestBlocks.STRIPPED_GUARDIAN_WOOD.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_LOG.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_WOOD.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_LEAVES.get());
                     }))
                     .build());
 

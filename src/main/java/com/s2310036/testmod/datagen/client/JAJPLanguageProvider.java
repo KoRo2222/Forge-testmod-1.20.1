@@ -24,5 +24,10 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_FOSSIL, "ガーディアンの化石");
         addBlock(TestBlocks.PRISMARINE_ORE, "プリズマリン鉱石");
         addBlock(TestBlocks.DEEPSLATE_PRISMARINE_ORE, "深層プリズマリン鉱石");
+        addBlock(TestBlocks.GUARDIAN_LOG, "ガーディアンの原木");
+        addBlock(TestBlocks.STRIPPED_GUARDIAN_LOG, "樹皮を剥いだガーディアンの原木");
+        addBlock(TestBlocks.GUARDIAN_WOOD, "ガーディアンの木");
+        addBlock(TestBlocks.STRIPPED_GUARDIAN_WOOD, "樹皮を剥いだガーディアンの木");
+        addBlock(TestBlocks.GUARDIAN_LEAVES, "ガーディアンの葉");
     }
 }

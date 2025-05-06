@@ -41,6 +41,20 @@ public class TestRecipeProvider extends RecipeProvider implements IConditionBuil
                 .requires(TestItems.GUARDIAN_FIN.get())
                 .unlockedBy(getHasName(TestItems.GUARDIAN_FIN.get()), has(TestItems.GUARDIAN_FIN.get()))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TestBlocks.GUARDIAN_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', TestBlocks.GUARDIAN_LOG.get())
+                .unlockedBy(getHasName(TestBlocks.GUARDIAN_LOG.get()), has(TestBlocks.GUARDIAN_LOG.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TestBlocks.STRIPPED_GUARDIAN_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', TestBlocks.STRIPPED_GUARDIAN_LOG.get())
+                .unlockedBy(getHasName(TestBlocks.STRIPPED_GUARDIAN_LOG.get()), has(TestBlocks.STRIPPED_GUARDIAN_LOG.get()))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
