@@ -29,5 +29,15 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_WOOD, "Guardian Wood");
         addBlock(TestBlocks.STRIPPED_GUARDIAN_WOOD, "Stripped Guardian Wood");
         addBlock(TestBlocks.GUARDIAN_LEAVES, "Guardian Leaves");
+
+        addBlock(TestBlocks.GUARDIAN_PLANKS, "Guardian Planks");
+        addBlock(TestBlocks.GUARDIAN_SLAB, "Guardian Slab");
+        addBlock(TestBlocks.GUARDIAN_STAIRS, "Guardian Stairs");
+        addBlock(TestBlocks.GUARDIAN_FENCE, "Guardian Fence");
+        addBlock(TestBlocks.GUARDIAN_FENCE_GATE, "Guardian Fence Gate");
+        addBlock(TestBlocks.GUARDIAN_DOOR, "Guardian Door");
+        addBlock(TestBlocks.GUARDIAN_TRAPDOOR, "Guardian Trapdoor");
+        addBlock(TestBlocks.GUARDIAN_BUTTON, "Guardian Button");
+        addBlock(TestBlocks.GUARDIAN_PRESSURE_PLATE, "Guardian Pressure Plate");
     }
 }

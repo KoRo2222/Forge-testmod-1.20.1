@@ -5,8 +5,7 @@ import com.s2310036.testmod.block.TestBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -38,6 +37,29 @@ public class TestBlockStateProvider extends BlockStateProvider {
         item(TestBlocks.GUARDIAN_WOOD);
         item(TestBlocks.STRIPPED_GUARDIAN_WOOD);
         simpleLeaves(TestBlocks.GUARDIAN_LEAVES);
+
+        simpleBlockWithItem(TestBlocks.GUARDIAN_PLANKS);
+        slabBlock((SlabBlock) TestBlocks.GUARDIAN_SLAB.get(),
+                // 2つ重ねたときのテクスチャ
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()),
+                // 単体のテクスチャ
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+        stairsBlock((StairBlock) TestBlocks.GUARDIAN_STAIRS.get(),
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+        fenceBlock((FenceBlock) TestBlocks.GUARDIAN_FENCE.get(),
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) TestBlocks.GUARDIAN_FENCE_GATE.get(),
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) TestBlocks.GUARDIAN_DOOR.get(),
+                modLoc("block/guardian_door_bottom"),
+                modLoc("block/guardian_door_top"),
+                "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) TestBlocks.GUARDIAN_TRAPDOOR.get(),
+                modLoc("block/guardian_trapdoor"), true, "cutout");
+        buttonBlock((ButtonBlock) TestBlocks.GUARDIAN_BUTTON.get(),
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) TestBlocks.GUARDIAN_PRESSURE_PLATE.get(),
+                blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
     }
 
     private void simpleBlockWithItem(RegistryObject<Block> block) {

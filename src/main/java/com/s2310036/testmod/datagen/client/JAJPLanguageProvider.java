@@ -29,5 +29,15 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_WOOD, "ガーディアンの木");
         addBlock(TestBlocks.STRIPPED_GUARDIAN_WOOD, "樹皮を剥いだガーディアンの木");
         addBlock(TestBlocks.GUARDIAN_LEAVES, "ガーディアンの葉");
+
+        addBlock(TestBlocks.GUARDIAN_PLANKS, "ガーディアンの板材");
+        addBlock(TestBlocks.GUARDIAN_SLAB, "ガーディアンのハーフブロック");
+        addBlock(TestBlocks.GUARDIAN_STAIRS, "ガーディアンの階段");
+        addBlock(TestBlocks.GUARDIAN_FENCE, "ガーディアンのフェンス");
+        addBlock(TestBlocks.GUARDIAN_FENCE_GATE, "ガーディアンのフェンスゲート");
+        addBlock(TestBlocks.GUARDIAN_DOOR, "ガーディアンのドア");
+        addBlock(TestBlocks.GUARDIAN_TRAPDOOR, "ガーディアンのトラップドア");
+        addBlock(TestBlocks.GUARDIAN_BUTTON, "ガーディアンのボタン");
+        addBlock(TestBlocks.GUARDIAN_PRESSURE_PLATE, "ガーディアンの感圧板");
     }
 }

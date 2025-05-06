@@ -54,5 +54,15 @@ public class TestBlockTagsProvider extends BlockTagsProvider {
         // 地面かどうかの判定に使われたり、ハサミで回収できるようになったりする
         this.tag(BlockTags.LEAVES)
                 .add(TestBlocks.GUARDIAN_LEAVES.get());
+
+        this.tag(BlockTags.PLANKS).add(TestBlocks.GUARDIAN_PLANKS.get());
+        this.tag(BlockTags.SLABS).add(TestBlocks.GUARDIAN_SLAB.get());
+        this.tag(BlockTags.STAIRS).add(TestBlocks.GUARDIAN_STAIRS.get());
+        this.tag(BlockTags.FENCES).add(TestBlocks.GUARDIAN_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES).add(TestBlocks.GUARDIAN_FENCE_GATE.get());
+        this.tag(BlockTags.DOORS).add(TestBlocks.GUARDIAN_DOOR.get());
+        this.tag(BlockTags.TRAPDOORS).add(TestBlocks.GUARDIAN_TRAPDOOR.get());
+        this.tag(BlockTags.BUTTONS).add(TestBlocks.GUARDIAN_BUTTON.get());
+        this.tag(BlockTags.PRESSURE_PLATES).add(TestBlocks.GUARDIAN_PRESSURE_PLATE.get());
     }
 }

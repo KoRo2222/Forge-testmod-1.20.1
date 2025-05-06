@@ -5,14 +5,13 @@ import com.s2310036.testmod.block.custom.TestLeavesBlock;
 import com.s2310036.testmod.block.custom.TestLogBlock;
 import com.s2310036.testmod.block.custom.TestStrippableLogBlock;
 import com.s2310036.testmod.item.TestItems;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -53,6 +52,41 @@ public class TestBlocks {
 
     public static final RegistryObject<Block> GUARDIAN_LEAVES = registerBlockItem("guardian_leaves",
             () -> new TestLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    // 板材
+    public static final RegistryObject<Block> GUARDIAN_PLANKS = registerBlockItem("guardian_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    // ハーフブロック
+    public static final RegistryObject<Block> GUARDIAN_SLAB = registerBlockItem("guardian_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    // 階段
+    public static final RegistryObject<Block> GUARDIAN_STAIRS = registerBlockItem("guardian_stairs",
+            () -> new StairBlock(() -> TestBlocks.GUARDIAN_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    // フェンス
+    public static final RegistryObject<Block> GUARDIAN_FENCE = registerBlockItem("guardian_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    // フェンスゲート
+    public static final RegistryObject<Block> GUARDIAN_FENCE_GATE = registerBlockItem("guardian_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS),
+                    SoundEvents.BAMBOO_WOOD_FENCE_GATE_OPEN, SoundEvents.BAMBOO_WOOD_FENCE_GATE_CLOSE));
+    // ドア
+    public static final RegistryObject<Block> GUARDIAN_DOOR = registerBlockItem("guardian_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS),
+                    BlockSetType.OAK));
+    // トラップドア
+    public static final RegistryObject<Block> GUARDIAN_TRAPDOOR = registerBlockItem("guardian_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noCollission(),
+                    BlockSetType.IRON));
+    // ボタン
+    public static final RegistryObject<Block> GUARDIAN_BUTTON = registerBlockItem("guardian_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS),
+                    BlockSetType.OAK, 30, true));
+    // 感圧板
+    public static final RegistryObject<Block> GUARDIAN_PRESSURE_PLATE = registerBlockItem("guardian_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS),
+                    BlockSetType.OAK));
 
     private static <T extends Block> RegistryObject<T> registerBlockItem(String name,
                                                                          Supplier<T> supplier) {

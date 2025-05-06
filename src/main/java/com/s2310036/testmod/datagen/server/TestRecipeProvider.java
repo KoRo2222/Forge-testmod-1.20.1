@@ -3,6 +3,8 @@ package com.s2310036.testmod.datagen.server;
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.block.TestBlocks;
 import com.s2310036.testmod.item.TestItems;
+import com.s2310036.testmod.item.TestTabs;
+import com.s2310036.testmod.tag.TestTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -42,19 +44,37 @@ public class TestRecipeProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(TestItems.GUARDIAN_FIN.get()), has(TestItems.GUARDIAN_FIN.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TestBlocks.GUARDIAN_WOOD.get(), 3)
-                .pattern("##")
-                .pattern("##")
-                .define('#', TestBlocks.GUARDIAN_LOG.get())
-                .unlockedBy(getHasName(TestBlocks.GUARDIAN_LOG.get()), has(TestBlocks.GUARDIAN_LOG.get()))
-                .save(pWriter);
+        woodFromLogs(pWriter, TestBlocks.GUARDIAN_WOOD.get(),
+                TestBlocks.GUARDIAN_LOG.get());
+        woodFromLogs(pWriter, TestBlocks.STRIPPED_GUARDIAN_WOOD.get(),
+                TestBlocks.STRIPPED_GUARDIAN_LOG.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TestBlocks.STRIPPED_GUARDIAN_WOOD.get(), 3)
-                .pattern("##")
-                .pattern("##")
-                .define('#', TestBlocks.STRIPPED_GUARDIAN_LOG.get())
-                .unlockedBy(getHasName(TestBlocks.STRIPPED_GUARDIAN_LOG.get()), has(TestBlocks.STRIPPED_GUARDIAN_LOG.get()))
-                .save(pWriter);
+        planksFromLog(pWriter, TestBlocks.GUARDIAN_PLANKS.get(),
+                TestTags.Items.GUARDIAN_LOG, 4);
+        slab(pWriter, RecipeCategory.BUILDING_BLOCKS,
+                TestBlocks.GUARDIAN_SLAB.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        stairs(pWriter,
+                TestBlocks.GUARDIAN_STAIRS.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        fence(pWriter,
+                TestBlocks.GUARDIAN_FENCE.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        fenceGate(pWriter,
+                TestBlocks.GUARDIAN_FENCE_GATE.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        door(pWriter,
+                TestBlocks.GUARDIAN_DOOR.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        trapdoor(pWriter,
+                TestBlocks.GUARDIAN_TRAPDOOR.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        button(pWriter,
+                TestBlocks.GUARDIAN_BUTTON.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
+        pressurePlate(pWriter,
+                TestBlocks.GUARDIAN_PRESSURE_PLATE.get(),
+                TestBlocks.GUARDIAN_PLANKS.get());
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
@@ -73,5 +93,38 @@ public class TestRecipeProvider extends RecipeProvider implements IConditionBuil
                     .save(pFinishedRecipeConsumer, TestMod.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
+    }
+
+    private static void stairs(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult, ItemLike pIngredient) {
+        stairBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
+    }
+    private static void fence(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult, ItemLike pIngredient) {
+        fenceBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
+    }
+    private static void fenceGate(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult,
+                                  ItemLike pIngredient) {
+        fenceGateBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
+    }
+    private static void door(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult, ItemLike pIngredient) {
+        doorBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
+    }
+    private static void trapdoor(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult,
+                                 ItemLike pIngredient) {
+        trapdoorBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
+    }
+    private static void button(Consumer<FinishedRecipe> pRecipeOutput, ItemLike pResult, ItemLike pIngredient) {
+        buttonBuilder(pResult, Ingredient.of(pIngredient))
+                .unlockedBy(getHasName(pIngredient), has(pIngredient))
+                .save(pRecipeOutput);
     }
 }

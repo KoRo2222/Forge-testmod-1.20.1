@@ -41,6 +41,18 @@ public class TestBlockLootTables extends BlockLootSubProvider {
         // TODO:ドロップを苗木に変更
         this.add(TestBlocks.GUARDIAN_LEAVES.get(), block ->
                 createLeavesDrops(block, TestBlocks.GUARDMARINE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.dropSelf(TestBlocks.GUARDIAN_PLANKS.get());
+        this.dropSelf(TestBlocks.GUARDIAN_STAIRS.get());
+        this.dropSelf(TestBlocks.GUARDIAN_FENCE.get());
+        this.dropSelf(TestBlocks.GUARDIAN_FENCE_GATE.get());
+        this.dropSelf(TestBlocks.GUARDIAN_TRAPDOOR.get());
+        this.dropSelf(TestBlocks.GUARDIAN_BUTTON.get());
+        this.dropSelf(TestBlocks.GUARDIAN_PRESSURE_PLATE.get());
+        this.add(TestBlocks.GUARDIAN_SLAB.get(),
+                createSlabItemTable(TestBlocks.GUARDIAN_SLAB.get()));
+        this.add(TestBlocks.GUARDIAN_DOOR.get(),
+                createDoorTable(TestBlocks.GUARDIAN_DOOR.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

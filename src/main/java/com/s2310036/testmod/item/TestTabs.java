@@ -33,6 +33,15 @@ public class TestTabs {
                         pOutput.accept(TestBlocks.GUARDIAN_LOG.get());
                         pOutput.accept(TestBlocks.GUARDIAN_WOOD.get());
                         pOutput.accept(TestBlocks.GUARDIAN_LEAVES.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_PLANKS.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_SLAB.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_STAIRS.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_FENCE.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_FENCE_GATE.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_DOOR.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_TRAPDOOR.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_BUTTON.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_PRESSURE_PLATE.get());
                     }))
                     .build());
 
