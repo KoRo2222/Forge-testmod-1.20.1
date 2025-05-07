@@ -6,6 +6,9 @@ import com.s2310036.testmod.entity.TestEntities;
 import com.s2310036.testmod.item.TestItems;
 import com.s2310036.testmod.item.TestTabs;
 import com.s2310036.testmod.loot.TestLootModifiers;
+import com.s2310036.testmod.worldgen.biome.TestOverworldRegion;
+import com.s2310036.testmod.worldgen.biome.TestSurfaceRuleData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,6 +22,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 @Mod(TestMod.MOD_ID)
 public class TestMod
@@ -50,6 +55,13 @@ public class TestMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            Regions.register(new TestOverworldRegion(
+                    ResourceLocation.fromNamespaceAndPath(TestMod.MOD_ID, "overworld"
+                            ), 5));
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,
+                    MOD_ID, TestSurfaceRuleData.makeRules());
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)

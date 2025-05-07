@@ -34,11 +34,12 @@ public class TestBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.ORE_PRISMARINE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
-        context.register(ADD_GUARDIAN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
-                HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.GUARDIAN_TREE)),
-                GenerationStep.Decoration.VEGETAL_DECORATION
-        ));
+        // 木が生成されるバイオームを設定
+  //      context.register(ADD_GUARDIAN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+  //              biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+  //              HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.GUARDIAN_TREE)),
+  //              GenerationStep.Decoration.VEGETAL_DECORATION
+  //      ));
     }
 
     private static ResourceKey<BiomeModifier> createKey(String name) {
