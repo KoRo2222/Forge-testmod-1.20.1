@@ -1,7 +1,7 @@
 package com.s2310036.testmod.worldgen.biome;
 
 import com.s2310036.testmod.TestMod;
-import com.s2310036.testmod.worldgen.placement.TestOrePlacement;
+import com.s2310036.testmod.worldgen.placement.TestPlacement;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -27,7 +27,7 @@ public class TestBiomeModifiers {
 
         context.register(ADD_PRISMARINE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeatures.getOrThrow(TestOrePlacement.ORE_PRISMARINE)),
+                HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.ORE_PRISMARINE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
     }

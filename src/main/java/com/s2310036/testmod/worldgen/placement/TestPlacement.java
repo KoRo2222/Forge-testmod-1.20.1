@@ -1,7 +1,7 @@
 package com.s2310036.testmod.worldgen.placement;
 
 import com.s2310036.testmod.TestMod;
-import com.s2310036.testmod.worldgen.features.TestOreFeatures;
+import com.s2310036.testmod.worldgen.features.TestFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-public class TestOrePlacement {
+public class TestPlacement {
     public static final ResourceKey<PlacedFeature> ORE_PRISMARINE =
             createKey("ore_prismarine");
 
@@ -25,7 +25,7 @@ public class TestOrePlacement {
 
         Object IntroductionOreFeatures;
         PlacementUtils.register(context, ORE_PRISMARINE,
-                configuredFeatures.getOrThrow(TestOreFeatures.PRISMARINE_ORE_KEY),
+                configuredFeatures.getOrThrow(TestFeatures.PRISMARINE_ORE_KEY),
                 commonOrePlacement(90,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64),
                                 VerticalAnchor.absolute(112))));

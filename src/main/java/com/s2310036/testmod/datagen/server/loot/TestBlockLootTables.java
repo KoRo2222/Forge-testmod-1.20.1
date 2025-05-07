@@ -38,9 +38,8 @@ public class TestBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(TestBlocks.STRIPPED_GUARDIAN_LOG.get());
         this.dropSelf(TestBlocks.GUARDIAN_WOOD.get());
         this.dropSelf(TestBlocks.STRIPPED_GUARDIAN_WOOD.get());
-        // TODO:ドロップを苗木に変更
         this.add(TestBlocks.GUARDIAN_LEAVES.get(), block ->
-                createLeavesDrops(block, TestBlocks.GUARDMARINE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                createLeavesDrops(block, TestBlocks.GUARDIAN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.dropSelf(TestBlocks.GUARDIAN_PLANKS.get());
         this.dropSelf(TestBlocks.GUARDIAN_STAIRS.get());
@@ -53,6 +52,8 @@ public class TestBlockLootTables extends BlockLootSubProvider {
                 createSlabItemTable(TestBlocks.GUARDIAN_SLAB.get()));
         this.add(TestBlocks.GUARDIAN_DOOR.get(),
                 createDoorTable(TestBlocks.GUARDIAN_DOOR.get()));
+
+        this.dropSelf(TestBlocks.GUARDIAN_SAPLING.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

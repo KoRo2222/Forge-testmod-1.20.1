@@ -39,5 +39,7 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_TRAPDOOR, "ガーディアンのトラップドア");
         addBlock(TestBlocks.GUARDIAN_BUTTON, "ガーディアンのボタン");
         addBlock(TestBlocks.GUARDIAN_PRESSURE_PLATE, "ガーディアンの感圧板");
+
+        addBlock(TestBlocks.GUARDIAN_SAPLING, "ガーディアンの苗木");
     }
 }

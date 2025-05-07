@@ -60,6 +60,8 @@ public class TestBlockStateProvider extends BlockStateProvider {
                 blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
         pressurePlateBlock((PressurePlateBlock) TestBlocks.GUARDIAN_PRESSURE_PLATE.get(),
                 blockTexture(TestBlocks.GUARDIAN_PLANKS.get()));
+
+        sapling(TestBlocks.GUARDIAN_SAPLING);
     }
 
     private void simpleBlockWithItem(RegistryObject<Block> block) {
@@ -88,5 +90,11 @@ public class TestBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(block.get(), models().singleTexture(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
                 ResourceLocation.fromNamespaceAndPath("minecraft","block/leaves"),
                 "all", blockTexture(block.get())).renderType("cutout"));
+    }
+
+    private void sapling(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                        blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

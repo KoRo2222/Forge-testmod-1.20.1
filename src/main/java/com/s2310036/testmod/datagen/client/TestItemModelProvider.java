@@ -30,6 +30,8 @@ public class TestItemModelProvider extends ItemModelProvider {
         trapdoor(TestBlocks.GUARDIAN_TRAPDOOR);
         fence(TestBlocks.GUARDIAN_FENCE, TestBlocks.GUARDIAN_PLANKS);
         button(TestBlocks.GUARDIAN_BUTTON, TestBlocks.GUARDIAN_PLANKS);
+
+        sapling(TestBlocks.GUARDIAN_SAPLING);
     }
 
     public void itemWithBlock(RegistryObject<Block> block) {
@@ -53,5 +55,10 @@ public class TestItemModelProvider extends ItemModelProvider {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
                 .texture("texture", ResourceLocation.fromNamespaceAndPath(TestMod.MOD_ID,
                         "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+    private void sapling(RegistryObject<Block> block) {
+        this.withExistingParent(block.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath("minecraft","item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(TestMod.MOD_ID,"block/" + block.getId().getPath()));
     }
 }

@@ -5,6 +5,7 @@ import com.s2310036.testmod.block.custom.TestLeavesBlock;
 import com.s2310036.testmod.block.custom.TestLogBlock;
 import com.s2310036.testmod.block.custom.TestStrippableLogBlock;
 import com.s2310036.testmod.item.TestItems;
+import com.s2310036.testmod.worldgen.tree.GuardianTreeGrower;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -95,6 +96,10 @@ public class TestBlocks {
                 () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }
+    // 苗木
+    public static final RegistryObject<Block> GUARDIAN_SAPLING = registerBlockItem("guardian_sapling",
+            () -> new SaplingBlock(new GuardianTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

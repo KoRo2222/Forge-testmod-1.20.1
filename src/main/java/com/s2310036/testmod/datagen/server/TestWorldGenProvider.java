@@ -2,8 +2,8 @@ package com.s2310036.testmod.datagen.server;
 
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.worldgen.biome.TestBiomeModifiers;
-import com.s2310036.testmod.worldgen.features.TestOreFeatures;
-import com.s2310036.testmod.worldgen.placement.TestOrePlacement;
+import com.s2310036.testmod.worldgen.features.TestFeatures;
+import com.s2310036.testmod.worldgen.placement.TestPlacement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -16,8 +16,8 @@ import java.util.concurrent.CompletableFuture;
 
 public class TestWorldGenProvider extends DatapackBuiltinEntriesProvider {
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.CONFIGURED_FEATURE, TestOreFeatures::bootstrap)
-            .add(Registries.PLACED_FEATURE, TestOrePlacement::bootstrap)
+            .add(Registries.CONFIGURED_FEATURE, TestFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, TestPlacement::bootstrap)
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, TestBiomeModifiers::bootstrap);
 
     public TestWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

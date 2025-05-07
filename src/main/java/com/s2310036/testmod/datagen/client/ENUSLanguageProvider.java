@@ -39,5 +39,7 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_TRAPDOOR, "Guardian Trapdoor");
         addBlock(TestBlocks.GUARDIAN_BUTTON, "Guardian Button");
         addBlock(TestBlocks.GUARDIAN_PRESSURE_PLATE, "Guardian Pressure Plate");
+
+        addBlock(TestBlocks.GUARDIAN_SAPLING, "Guardian Sapling");
     }
 }

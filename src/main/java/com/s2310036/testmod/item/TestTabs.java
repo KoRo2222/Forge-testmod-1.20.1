@@ -42,6 +42,7 @@ public class TestTabs {
                         pOutput.accept(TestBlocks.GUARDIAN_TRAPDOOR.get());
                         pOutput.accept(TestBlocks.GUARDIAN_BUTTON.get());
                         pOutput.accept(TestBlocks.GUARDIAN_PRESSURE_PLATE.get());
+                        pOutput.accept(TestBlocks.GUARDIAN_SAPLING.get());
                     }))
                     .build());
 
