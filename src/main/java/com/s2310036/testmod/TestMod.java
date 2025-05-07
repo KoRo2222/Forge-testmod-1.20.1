@@ -2,6 +2,7 @@ package com.s2310036.testmod;
 
 import com.mojang.logging.LogUtils;
 import com.s2310036.testmod.block.TestBlocks;
+import com.s2310036.testmod.entity.TestEntities;
 import com.s2310036.testmod.item.TestItems;
 import com.s2310036.testmod.item.TestTabs;
 import com.s2310036.testmod.loot.TestLootModifiers;
@@ -39,6 +40,8 @@ public class TestMod
         TestBlocks.register(modEventBus);
         // GlobalLootModifierレジストリをイベントバスに登録
         TestLootModifiers.register(modEventBus);
+        // エンティティレジストリをイベントバス二登録
+        TestEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

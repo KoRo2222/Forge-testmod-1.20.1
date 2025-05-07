@@ -2,6 +2,7 @@ package com.s2310036.testmod.datagen.client;
 
 import com.s2310036.testmod.TestMod;
 import com.s2310036.testmod.block.TestBlocks;
+import com.s2310036.testmod.entity.TestEntities;
 import com.s2310036.testmod.item.TestItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -41,5 +42,7 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_PRESSURE_PLATE, "Guardian Pressure Plate");
 
         addBlock(TestBlocks.GUARDIAN_SAPLING, "Guardian Sapling");
+
+        addEntityType(TestEntities.GUARDIAN_ALPHA, "Guardian Alpha");
     }
 }
