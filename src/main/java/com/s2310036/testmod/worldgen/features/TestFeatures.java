@@ -44,6 +44,7 @@ public class TestFeatures {
         FeatureUtils.register(context, GUARDIAN_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(TestBlocks.GUARDIAN_LOG.get()),
                 new StraightTrunkPlacer(5,3,4),
+                // new ForkingTrunkPlacer(5,15,0), 幹の形を枝ありに変更
                 BlockStateProvider.simple(TestBlocks.GUARDIAN_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2),3),
                 new TwoLayersFeatureSize(1,0,2)).build());
