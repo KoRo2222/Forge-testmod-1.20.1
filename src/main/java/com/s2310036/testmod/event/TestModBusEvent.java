@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = TestMod.MOD_ID,bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TestEventBusEvent {
+public class TestModBusEvent {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(TestEntities.GUARDIAN_ALPHA.get(), GuardianAlpha.createAttributes().build());
