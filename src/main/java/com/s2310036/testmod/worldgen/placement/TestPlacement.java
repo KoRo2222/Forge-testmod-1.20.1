@@ -1,11 +1,13 @@
 package com.s2310036.testmod.worldgen.placement;
 
 import com.s2310036.testmod.TestMod;
+import com.s2310036.testmod.block.TestBlocks;
 import com.s2310036.testmod.worldgen.features.TestFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -18,6 +20,9 @@ public class TestPlacement {
     public static final ResourceKey<PlacedFeature> ORE_PRISMARINE =
             createKey("ore_prismarine");
 
+    public static final ResourceKey<PlacedFeature> GUARDIAN_TREE =
+            createKey("guardian_tree");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         // 鉱石の配置情報を設定
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures =
@@ -29,6 +34,11 @@ public class TestPlacement {
                 commonOrePlacement(90,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64),
                                 VerticalAnchor.absolute(112))));
+        PlacementUtils.register(context, GUARDIAN_TREE,
+                configuredFeatures.getOrThrow(TestFeatures.GUARDIAN_TREE_KEY),
+                VegetationPlacements.treePlacement(
+                        PlacementUtils.countExtra(10, 0.1f, 1),
+                        TestBlocks.GUARDIAN_SAPLING.get()));
     }
 
     private static ResourceKey<PlacedFeature> createKey(String name) {

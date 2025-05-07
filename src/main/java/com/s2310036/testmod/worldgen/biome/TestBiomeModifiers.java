@@ -12,6 +12,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,6 +20,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class TestBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_PRISMARINE_ORE =
             createKey("add_prismarine_ore");
+
+    public static final ResourceKey<BiomeModifier> ADD_GUARDIAN_TREE =
+            createKey("add_guardian_tree");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures =
@@ -29,6 +33,11 @@ public class TestBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.ORE_PRISMARINE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_GUARDIAN_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                HolderSet.direct(placedFeatures.getOrThrow(TestPlacement.GUARDIAN_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
         ));
     }
 
