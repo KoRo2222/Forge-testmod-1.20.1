@@ -32,6 +32,9 @@ public class TestItemModelProvider extends ItemModelProvider {
         button(TestBlocks.GUARDIAN_BUTTON, TestBlocks.GUARDIAN_PLANKS);
 
         sapling(TestBlocks.GUARDIAN_SAPLING);
+
+        withExistingParent(TestItems.GUARDIAN_ALPHA_SPAWN_EGG.getId().getPath(),
+                mcLoc("item/template_spawn_egg"));
     }
 
     public void itemWithBlock(RegistryObject<Block> block) {

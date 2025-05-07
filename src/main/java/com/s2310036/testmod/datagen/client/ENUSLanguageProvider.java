@@ -44,5 +44,7 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_SAPLING, "Guardian Sapling");
 
         addEntityType(TestEntities.GUARDIAN_ALPHA, "Guardian Alpha");
+
+        addItem(TestItems.GUARDIAN_ALPHA_SPAWN_EGG, "Guardian Alpha Spawn Egg");
     }
 }

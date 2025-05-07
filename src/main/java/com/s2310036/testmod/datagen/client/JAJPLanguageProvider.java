@@ -44,5 +44,7 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addBlock(TestBlocks.GUARDIAN_SAPLING, "ガーディアンの苗木");
 
         addEntityType(TestEntities.GUARDIAN_ALPHA, "ガーディアンアルファ");
+
+        addItem(TestItems.GUARDIAN_ALPHA_SPAWN_EGG, "ガーディアンアルファのスポーンエッグ");
     }
 }
