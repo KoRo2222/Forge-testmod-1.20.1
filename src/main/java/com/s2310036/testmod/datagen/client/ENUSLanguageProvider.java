@@ -19,7 +19,8 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addItem(TestItems.GUARDIAN_SCALES, "Guardian Scales");
         addItem(TestItems.GUARDIAN_FIN, "Guardian Fin");
 
-        add("creativetabs.test_tab", "Test");
+        add("creativetabs.test_item_tab", "Test Items");
+        add("creativetabs.test_block_tab", "Test Blocks");
 
         addBlock(TestBlocks.GUARDMARINE, "Guardmarine");
         addBlock(TestBlocks.GUARDIAN_FOSSIL, "Guardian Fossil");

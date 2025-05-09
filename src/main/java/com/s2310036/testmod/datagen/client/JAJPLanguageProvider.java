@@ -19,7 +19,8 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addItem(TestItems.GUARDIAN_SCALES, "ガーディアンのウロコ");
         addItem(TestItems.GUARDIAN_FIN, "ガーディアンのひれ");
 
-        add("creativetabs.test_tab", "テスト");
+        add("creativetabs.test_item_tab", "テストアイテム");
+        add("creativetabs.test_block_tab", "テストブロック");
 
         addBlock(TestBlocks.GUARDMARINE, "ガードマリン");
         addBlock(TestBlocks.GUARDIAN_FOSSIL, "ガーディアンの化石");
