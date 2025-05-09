@@ -35,6 +35,8 @@ public class TestItemModelProvider extends ItemModelProvider {
 
         withExistingParent(TestItems.GUARDIAN_ALPHA_SPAWN_EGG.getId().getPath(),
                 mcLoc("item/template_spawn_egg"));
+
+        basicItem(TestItems.GUARDIAN_EYE.get());
     }
 
     public void itemWithBlock(RegistryObject<Block> block) {

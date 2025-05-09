@@ -26,6 +26,8 @@ public class TestItems {
                     Color.CYAN.getRGB(), Color.ORANGE.getRGB(),
                     new Item.Properties()));
 
+    public static final  RegistryObject<Item> GUARDIAN_EYE = ITEMS.register("guardian_eye", GuardianEye::new);
+
     public static void register(IEventBus eventbus) {
         // レジストリをイベントバスに登録
         ITEMS.register(eventbus);

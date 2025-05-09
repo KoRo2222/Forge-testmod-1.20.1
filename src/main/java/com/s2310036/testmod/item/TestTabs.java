@@ -25,6 +25,7 @@ public class TestTabs {
                         pOutput.accept(TestItems.GUARDIAN_FIN.get());
                         pOutput.accept(TestBlocks.GUARDIAN_SAPLING.get());
                         pOutput.accept(TestItems.GUARDIAN_ALPHA_SPAWN_EGG.get());
+                        pOutput.accept(TestItems.GUARDIAN_EYE.get());
                     }))
                     .build());
 
